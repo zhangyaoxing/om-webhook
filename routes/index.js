@@ -9,12 +9,11 @@ router.post('/', function (req, res, next) {
 
   const digest = crypto.createHmac('sha1', key)
     .update(text)
-    .digest('hex')
-    .toString("base64");
+    .digest('base64');
   const signature = req.headers["x-mms-signature"];
   console.debug(text);
   console.log(`Computed signature: ${digest}`);
-  console.log(`Expected Signature: ${signature}`);
+  console.log(`Expected signature: ${signature}`);
   console.log(`Signature ${(digest == signature) ? "matches": "doesn't match"}`);
   res.send({ok: 1});
 });
