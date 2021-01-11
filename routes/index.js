@@ -3,7 +3,7 @@ const crypto = require('crypto');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.post('/', function (req, res, next) {
   const text = req.rawBody;
   const key = 'abcdeg' // Secret key
 
