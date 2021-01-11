@@ -12,6 +12,7 @@ router.post('/', function (req, res, next) {
     .digest('hex')
     .toString("base64");
   const signature = req.headers["X-MMS-Signature"];
+  console.debug(text);
   console.log(`Computed signature: ${digest}`);
   console.log(`Expected Signature: ${signature}`);
   console.log(`Signature ${(digest == signature) ? "matches": "doesn't match"}`);
