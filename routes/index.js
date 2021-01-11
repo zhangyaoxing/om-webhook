@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
   console.log(`Computed signature: ${digest}`);
   console.log(`Expected Signature: ${signature}`);
   console.log(`Signature ${(digest == signature) ? "matches": "doesn't match"}`);
+  res.send({ok: 1});
 });
 
 module.exports = router;
